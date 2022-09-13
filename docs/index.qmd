@@ -391,18 +391,18 @@ extrapolate_from_data(
 
     - No clear interface on how to get inputs for a given country or region.
 
-    - Not clear if the code matched the methods
-
-    - Potential issues with method
+    - Challenging to see which bits of code matched which methods
 
 
-## Build our own extension
+## Building our own extension
 
 - Nick Golding wrote a new method that was able to be more flexible, using GAMs instead of Bayesian approach.
 
 - I was tasked with writing software from initial model fitting code, with guidance from Nick
 
-- Named the package, `conmat` [repo](https://github.com/njtierney/conmat), creating a home for code for others to contribute to.
+- Named the package, `conmat`, ([repo](https://github.com/njtierney/conmat)), creating a home for code for others to contribute to.
+
+- In R package form, this made it easier for us to develop and extend software on demand for our needs
 
 ## Demonstration of conmat
 
@@ -414,7 +414,7 @@ fairfield <- abs_age_lga("Fairfield (C)")
 fairfield
 ```
 
-## Extrapoloate to a new population
+## Extrapolate to a new population
 
 ```{r}
 #| label: extrapolate-fairfield
@@ -422,13 +422,6 @@ fairfield
 synthetic_fairfield <- extrapolate_polymod(
  population = fairfield
 )
-```
-
-## extrapolate to a new population
-
-```{r}
-#| label: show-fairfield
-#| echo: true
 synthetic_fairfield
 ```
 
@@ -461,22 +454,22 @@ plot_matrix(synthetic_polymod$home)
 #| eval: false
 #| echo: true
 synthetic_fairfield <- extrapolate_polymod(
- population = fairfield
+ population = fairfield,
+ age_breaks = c(seq(0, 75, by = 5), Inf)
 )
 ```
 
 
 - Model fitting is fixed and rigid
+  - Although there are arguments for `age_break`
 - Design decision to provide access to fitting the model
 - Fixed and rigid means you cannot change the 
 
 ## Challenges in Design
 
 - Hard coding variables
-
-- age and population columns are currently required to be named `lower.age.limit` and `population`
-
-- At least 2 potential ways to resolve this
+  - age and population columns are currently required to be named `lower.age.limit` and `population`
+  - At least 2 potential ways to resolve this
 
 ```{r}
 #| echo: true

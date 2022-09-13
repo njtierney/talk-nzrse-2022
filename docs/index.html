@@ -706,18 +706,18 @@ Nick  FALSE FALSE  TRUE</code></pre>
 <li class="fragment"><p>It was code not written for reuse (code vs software)</p>
 <ul>
 <li class="fragment"><p>No clear interface on how to get inputs for a given country or region.</p></li>
-<li class="fragment"><p>Not clear if the code matched the methods</p></li>
-<li class="fragment"><p>Potential issues with method</p></li>
+<li class="fragment"><p>Challenging to see which bits of code matched which methods</p></li>
 </ul></li>
 </ul></li>
 </ul>
 </section>
-<section id="build-our-own-extension" class="slide level2">
-<h2>Build our own extension</h2>
+<section id="building-our-own-extension" class="slide level2">
+<h2>Building our own extension</h2>
 <ul>
 <li class="fragment"><p>Nick Golding wrote a new method that was able to be more flexible, using GAMs instead of Bayesian approach.</p></li>
 <li class="fragment"><p>I was tasked with writing software from initial model fitting code, with guidance from Nick</p></li>
-<li class="fragment"><p>Named the package, <code>conmat</code> <a href="https://github.com/njtierney/conmat">repo</a>, creating a home for code for others to contribute to.</p></li>
+<li class="fragment"><p>Named the package, <code>conmat</code>, (<a href="https://github.com/njtierney/conmat">repo</a>), creating a home for code for others to contribute to.</p></li>
+<li class="fragment"><p>In R package form, this made it easier for us to develop and extend software on demand for our needs</p></li>
 </ul>
 </section>
 <section id="demonstration-of-conmat" class="slide level2">
@@ -751,18 +751,13 @@ Nick  FALSE FALSE  TRUE</code></pre>
 </div>
 </div>
 </section>
-<section id="extrapoloate-to-a-new-population" class="slide level2">
-<h2>Extrapoloate to a new population</h2>
-<div class="cell" data-hash="index_cache/revealjs/extrapolate-fairfield_d7d724608ce2377aa9027da5a9d6a55e">
+<section id="extrapolate-to-a-new-population" class="slide level2">
+<h2>Extrapolate to a new population</h2>
+<div class="cell" data-hash="index_cache/revealjs/extrapolate-fairfield_dbabd3f600a87f72a6504633a7217cda">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>synthetic_fairfield <span class="ot">&lt;-</span> <span class="fu">extrapolate_polymod</span>(</span>
 <span id="cb6-2"><a href="#cb6-2"></a> <span class="at">population =</span> fairfield</span>
-<span id="cb6-3"><a href="#cb6-3"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="extrapolate-to-a-new-population" class="slide level2">
-<h2>extrapolate to a new population</h2>
-<div class="cell" data-hash="index_cache/revealjs/show-fairfield_61e0b08ec3bedcf5d91eebdc74a5b06d">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>synthetic_fairfield</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-3"><a href="#cb6-3"></a>)</span>
+<span id="cb6-4"><a href="#cb6-4"></a>synthetic_fairfield</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>$home
               [0,5)     [5,10)    [10,15)    [15,20)    [20,25)    [25,30)
@@ -1051,7 +1046,7 @@ $all
 <section id="plot-new-contact-matrix" class="slide level2">
 <h2>plot new contact matrix</h2>
 <div class="cell" data-hash="index_cache/revealjs/plot-matrix-fairfield_9a4c57d5217cd158625d3fcd4cfdead2">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">plot_matrix</span>(synthetic_fairfield<span class="sc">$</span>home)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="fu">plot_matrix</span>(synthetic_fairfield<span class="sc">$</span>home)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="index_files/figure-revealjs/plot-matrix-fairfield-1.png" width="960" class="r-stretch"><div class="cell" data-hash="index_cache/revealjs/polymod-extrapolate_e919f8ac1fa20cd663da6c02f367ad28">
@@ -1061,19 +1056,23 @@ $all
 <section id="plot-polymod" class="slide level2">
 <h2>plot POLYMOD</h2>
 <div class="cell" data-hash="index_cache/revealjs/plot-matrix-polymod_4912c5d5565f85511319123962066aaa">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">plot_matrix</span>(synthetic_polymod<span class="sc">$</span>home)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">plot_matrix</span>(synthetic_polymod<span class="sc">$</span>home)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
 <img data-src="index_files/figure-revealjs/plot-matrix-polymod-1.png" width="960" class="r-stretch"></section>
 <section id="challenges-in-design" class="slide level2">
 <h2>Challenges in Design</h2>
-<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-18_035a70a1a29ef1570b4000f8e3edc9ec">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>synthetic_fairfield <span class="ot">&lt;-</span> <span class="fu">extrapolate_polymod</span>(</span>
-<span id="cb11-2"><a href="#cb11-2"></a> <span class="at">population =</span> fairfield</span>
-<span id="cb11-3"><a href="#cb11-3"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-17_d27be5cbfcc42ef287a3d633012b894b">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>synthetic_fairfield <span class="ot">&lt;-</span> <span class="fu">extrapolate_polymod</span>(</span>
+<span id="cb10-2"><a href="#cb10-2"></a> <span class="at">population =</span> fairfield,</span>
+<span id="cb10-3"><a href="#cb10-3"></a> <span class="at">age_breaks =</span> <span class="fu">c</span>(<span class="fu">seq</span>(<span class="dv">0</span>, <span class="dv">75</span>, <span class="at">by =</span> <span class="dv">5</span>), <span class="cn">Inf</span>)</span>
+<span id="cb10-4"><a href="#cb10-4"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
-<li class="fragment">Model fitting is fixed and rigid</li>
+<li class="fragment">Model fitting is fixed and rigid
+<ul>
+<li class="fragment">Although there are arguments for <code>age_break</code></li>
+</ul></li>
 <li class="fragment">Design decision to provide access to fitting the model</li>
 <li class="fragment">Fixed and rigid means you cannot change the</li>
 </ul>
@@ -1081,12 +1080,14 @@ $all
 <section id="challenges-in-design-1" class="slide level2">
 <h2>Challenges in Design</h2>
 <ul>
-<li class="fragment"><p>Hard coding variables</p></li>
-<li class="fragment"><p>age and population columns are currently required to be named <code>lower.age.limit</code> and <code>population</code></p></li>
-<li class="fragment"><p>At least 2 potential ways to resolve this</p></li>
+<li class="fragment">Hard coding variables
+<ul>
+<li class="fragment">age and population columns are currently required to be named <code>lower.age.limit</code> and <code>population</code></li>
+<li class="fragment">At least 2 potential ways to resolve this</li>
+</ul></li>
 </ul>
-<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-19_b54bac249a2e5f9026d6c565153b0643">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>fairfield</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-18_389c844653e7df4b16a64d8ba3145692">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>fairfield</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 18 × 4
    lga           lower.age.limit  year population
@@ -1117,12 +1118,12 @@ $all
 <ol type="1">
 <li class="fragment">Provide arguments for specifying the age and population information (<code>age_col</code> and <code>population_col</code>)</li>
 </ol>
-<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-20_340ebb161b30e6c660003060a50dbbb9">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">extrapolate_polymod</span>(</span>
-<span id="cb14-2"><a href="#cb14-2"></a> <span class="at">population =</span> fairfield,</span>
-<span id="cb14-3"><a href="#cb14-3"></a> <span class="at">age_col =</span> lower.age.limit,</span>
-<span id="cb14-4"><a href="#cb14-4"></a> <span class="at">population_col =</span> population</span>
-<span id="cb14-5"><a href="#cb14-5"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-19_4d548ba7371b53567c8b386fd671a256">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="fu">extrapolate_polymod</span>(</span>
+<span id="cb13-2"><a href="#cb13-2"></a> <span class="at">population =</span> fairfield,</span>
+<span id="cb13-3"><a href="#cb13-3"></a> <span class="at">age_col =</span> lower.age.limit,</span>
+<span id="cb13-4"><a href="#cb13-4"></a> <span class="at">population_col =</span> population</span>
+<span id="cb13-5"><a href="#cb13-5"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="challenges-in-design-3" class="slide level2">
@@ -1130,15 +1131,15 @@ $all
 <ol start="2" type="1">
 <li class="fragment">Some kind of class based approach, where we encode or validate the <code>age</code> and <code>population</code> columns.</li>
 </ol>
-<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-21_cef1caf68dcc88a38e6ebab87feb2e74">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>fairfield_pop <span class="ot">&lt;-</span> <span class="fu">conmat_population</span>(</span>
-<span id="cb15-2"><a href="#cb15-2"></a>  <span class="at">data =</span> fairfield,</span>
-<span id="cb15-3"><a href="#cb15-3"></a>  <span class="at">age =</span> lower.age.limit,</span>
-<span id="cb15-4"><a href="#cb15-4"></a>  <span class="at">population =</span> population</span>
-<span id="cb15-5"><a href="#cb15-5"></a>)</span>
-<span id="cb15-6"><a href="#cb15-6"></a><span class="fu">extrapolate_polymod</span>(</span>
-<span id="cb15-7"><a href="#cb15-7"></a> <span class="at">population =</span> fairfield_pop</span>
-<span id="cb15-8"><a href="#cb15-8"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-20_68a0f053a53f05f0c1ac51aa27bb5bea">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>fairfield_pop <span class="ot">&lt;-</span> <span class="fu">conmat_population</span>(</span>
+<span id="cb14-2"><a href="#cb14-2"></a>  <span class="at">data =</span> fairfield,</span>
+<span id="cb14-3"><a href="#cb14-3"></a>  <span class="at">age =</span> lower.age.limit,</span>
+<span id="cb14-4"><a href="#cb14-4"></a>  <span class="at">population =</span> population</span>
+<span id="cb14-5"><a href="#cb14-5"></a>)</span>
+<span id="cb14-6"><a href="#cb14-6"></a><span class="fu">extrapolate_polymod</span>(</span>
+<span id="cb14-7"><a href="#cb14-7"></a> <span class="at">population =</span> fairfield_pop</span>
+<span id="cb14-8"><a href="#cb14-8"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="challenges-in-design-4" class="slide level2">
