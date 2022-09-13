@@ -11,7 +11,7 @@ We have developed methods for creating synthetic contact matrices that uses exis
 
 In this talk, I demonstrate the use of the {conmat} package, showcasing how it can be used in epidemiological analyses. I will also discuss the process of creating the software and the user interface.
 
-# Slide available [here](https://www.FILL-LINK-IN-HERE.ok)
+# Slide available [here]([njtierney.github.io/talk-nzrse-2022](https://njtierney.github.io/talk-nzrse-2022/#/title-slide))
 
 # Take home messages 
 

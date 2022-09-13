@@ -539,7 +539,7 @@ extrapolate_polymod(
 
 `r icon_box` [conmat package](https://github.com/njtierney/conmat)
 
-`r icon_link` [talk link]()
+`r icon_link` [njtierney.github.io/talk-nzrse-2022](https://njtierney.github.io/talk-nzrse-2022/#/title-slide)
 
 `r icon_twitter` nj_tierney
 
