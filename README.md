@@ -13,28 +13,9 @@ In this talk, I demonstrate the use of the {conmat} package, showcasing how it c
 
 # Slide available [here]([njtierney.github.io/talk-nzrse-2022](https://njtierney.github.io/talk-nzrse-2022/#/title-slide))
 
-# Take home messages 
-
-1. Point one
-1. Point two
-1. Point three
-
-# Thanks
-
-# Resources
-
 # Colophon
 
   - Slides made using [quarto](https://github.com/quarto-dev/quarto)
-  
-Eventually, this theme will add these features in:
-
-  - Colours taken + modified from [lorikeet theme from
-    ochRe](https://github.com/ropenscilabs/ochRe)
-  - Header font is **Josefin Sans**
-  - Body text font is **Montserrat**
-  - Code font is **Fira Mono**
-
 
 # Bio
 
