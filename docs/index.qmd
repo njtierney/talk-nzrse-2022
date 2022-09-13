@@ -81,15 +81,14 @@ nipa <- list(red = "#c03018",
 
 - 2013 - 2017: PhD Statistics, QUT
   - Exploratory Data Analysis (EDA)
-  - Bayesian Statistics
-  - Geospatial statistics / Optimal facility placement
+  - Bayesian / Geospatial statistics / Optimal placement
 
 - 2018 - 2020: Research Fellow / Lecturer at Monash
-  - Design and improve tools for (exploratory) data analysis
-  - Teach introduction to data analysis (ETC1010)
+  - Design and improve tools for EDA
 
----
-
+- 2020 - 2022: Research Software Engineer @ Telethon Kids Institute
+  - Maintain and design tools for data analysis
+  
 ## `visdat::vis_dat(airquality)`
 
 ```{r show-visdat, fig.height = 3.5, fig.width = 8, out.width = "150%"}
@@ -130,7 +129,9 @@ ggplot(heights,
 
 <!-- [greta-stats.org](https://www.greta-stats.org) -->
 
-## Infectious Disease Spread
+## Infectious Disease Modelling
+
+- I was briefly part of a team advising Australian Government for COVID response in 2021
 
 -   Diseases like COVID19 and Influenza spread through face to face social contact
 
@@ -143,8 +144,6 @@ ggplot(heights,
     -   James has had contact with Luke
 
     -   Nick hasn't had contact with either
-
-    -   (Note having contact with one person means it goes both ways)
 
 ::: notes
 So say we have 3 people and we want to describe who have had face to face contact in the past week. Let's take myself and my two brothers. They're both in Brisbane and I'm not, so I haven't seen them. We might say:
