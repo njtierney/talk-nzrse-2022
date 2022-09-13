@@ -1,0 +1,551 @@
+---
+title: "NZRSE conf"
+subtitle: "Extendable projection of social contact matrices"
+author: "Nicholas Tierney"
+institute: Telethon Kids Institute
+format: 
+  revealjs:
+    theme: [blood, extra.scss]
+    incremental: true
+editor: visual
+execute: 
+  echo: false
+  warning: false
+  message: false
+  cache: true
+  freeze: true
+---
+
+```{r}
+#| label: library
+#| include: false
+library(tidyverse)
+library(knitr)
+library(conmat)
+library(colorspace)
+library(visdat)
+library(naniar)
+library(brolgar)
+```
+
+```{r}
+#| label: source-r-files
+#| echo: false
+#| output: false
+lapply(list.files(here::here("R"), full.names = TRUE), source)
+```
+
+
+```{r}
+#| label: helpers
+#| include: false
+
+icons_fa <- icons::fontawesome
+icon_box <- icons_fa$solid$`box-open`
+icon_link <- icons_fa$solid$link
+icon_twitter <- icons_fa$brands$twitter
+icon_github <- icons_fa$brands$github
+icon_plane <- icons_fa$solid$`paper-plane`
+
+
+as_table <- function(...) knitr::kable(..., format='html', digits = 3)
+
+theme_set(
+  theme_grey(base_size = 16) +
+  theme(
+    legend.position = "bottom",
+    plot.background = element_rect(fill = "transparent"),
+    legend.background = element_rect(fill = "transparent")
+  )
+)
+
+# **ni**ck's **pa**lette
+nipa <- list(red = "#c03018",
+             orange = "#f0a800",
+             green = "#609048",
+             purple = "#484878",
+             light_purple = "#A3A3BB",
+             light_green = "#AFC7A3",
+             light_orange = "#F7D37F",
+             light_red = "#DF978B",
+             pale_purple = "#ECECF1",
+             pale_green = "#D7E3D1",
+             pale_orange = "#FBE9BF",
+             pale_red = "#EFCBC4")
+
+```
+
+## The story so far
+
+- 2008-2012: Undergraduate + honours in Psychology
+
+- 2013 - 2017: PhD Statistics, QUT
+  - Exploratory Data Analysis (EDA)
+  - Bayesian Statistics
+  - Geospatial statistics / Optimal facility placement
+
+- 2018 - 2020: Research Fellow / Lecturer at Monash
+  - Design and improve tools for (exploratory) data analysis
+  - Teach introduction to data analysis (ETC1010)
+
+---
+
+## `visdat::vis_dat(airquality)`
+
+```{r show-visdat, fig.height = 3.5, fig.width = 8, out.width = "150%"}
+vis_dat(airquality)
+```
+
+## `naniar::gg_miss_upset(riskfactors)`
+
+```{r gg-miss-upset, fig.height = 3.5, fig.width = 8, out.width = "150%"}
+gg_miss_upset(riskfactors)
+```
+
+## `brolgar` - take spaghetti
+
+```{r gg-brolgar}
+ggplot(heights,
+       aes(x = year,
+           y = height_cm,
+           group = country)) + 
+  geom_line()
+```
+
+## `brolgar` - spread spaghetti
+
+
+```{r gg-brolgar-spread}
+ggplot(heights,
+       aes(x = year,
+           y = height_cm,
+           group = country)) + 
+  geom_line() + 
+  facet_strata(along = -year)
+```
+
+##  {background-image="images/greta-logo-background.png" background-size="contain"}
+
+<!-- Professor Nick Golding -->
+
+<!-- [greta-stats.org](https://www.greta-stats.org) -->
+
+## Infectious Disease Spread
+
+-   Diseases like COVID19 and Influenza spread through face to face social contact
+
+::: notes
+-   I think we're all familiar enough with COVID to know what I mean here.
+:::
+
+-   Describe which 3 people had contact:
+
+    -   James has had contact with Luke
+
+    -   Nick hasn't had contact with either
+
+    -   (Note having contact with one person means it goes both ways)
+
+::: notes
+So say we have 3 people and we want to describe who have had face to face contact in the past week. Let's take myself and my two brothers. They're both in Brisbane and I'm not, so I haven't seen them. We might say:
+:::
+
+## Example: visually
+
+```{r}
+name_vec <- c("James", "Luke", "Nick")
+df_contact <- expand_grid(
+  name_from = name_vec,
+  name_to = name_vec
+) %>% 
+  mutate(
+    contact = as.logical(c(1, 1, 0,
+                           1, 1, 0,
+                           0, 0, 1)),
+    contact_num = c(10, 6, 0,
+                    6, 10, 0,
+                    0, 0, 10),
+    )
+
+ggplot(df_contact,
+       aes(x = name_from,
+           y = name_to,
+           fill = contact)) + 
+  geom_tile(colour = "white") +
+  scale_fill_manual(values = c("grey85", "grey20")) +
+  theme_minimal() +
+  theme(aspect.ratio = 1,
+        legend.position = "top")
+```
+
+::: notes
+This shows whether people had contact, yes or no. We can see that everyone had contact with one another except for Nick, and with Nick. Note that we could change this from something logical - "did they have contact" to "how many times did you have contact?"
+:::
+
+## Example: matrix
+
+```{r}
+#| label: example-matrix
+#| attr-output: 'style="font-size:170%;"'
+
+df_mat <- df_contact %>% 
+  select(-contact_num) %>% 
+  pivot_wider(
+    names_from = name_from,
+    values_from = contact
+  ) %>% 
+  select(-name_to) %>% 
+  as.matrix()
+
+colnames(df_mat) <- unique(df_contact$name_from)
+rownames(df_mat) <- unique(df_contact$name_from)
+df_mat
+
+```
+
+## Logical --\> Numeric
+
+```{r}
+ggplot(df_contact,
+       aes(x = name_from,
+           y = name_to,
+           fill = contact_num)) + 
+  geom_tile(colour = "white") +
+  scale_fill_continuous_sequential(palette = "Purples 2") +
+  theme_minimal() +
+  labs(fill = "# Contacts") + 
+  theme(aspect.ratio = 1)
+```
+
+::: notes
+So now we have not just, "Did you have contact?", but, "How many times did you have contact?" Instead of individual people, we could change this to age groups.
+:::
+
+## People --\> Age groups
+
+```{r}
+#| echo: false
+df_contact_ages <- df_contact %>% 
+  mutate(
+    across(
+      .cols = c(name_from, name_to),
+      .fns = ~case_when(
+        .x == "James" ~ "0-9",
+        .x == "Luke" ~ "10-19",
+        .x == "Nick" ~ "20-29",
+      )
+    )
+  ) %>% 
+  rename(
+    age_from = name_from,
+    age_to = name_to
+  )
+
+ggplot(df_contact_ages,
+       aes(x = age_from,
+           y = age_to,
+           fill = contact_num)) + 
+  geom_tile(colour = "white") +
+  scale_fill_continuous_sequential(palette = "Greens 2") +
+  theme_minimal() +
+  labs(fill = "# Contacts") + 
+  theme(aspect.ratio = 1)
+```
+
+## What do you do with this?
+
+-   Well, if we know how many times people have contact, then we can have an idea of which age groups will spread COVID
+
+-   Simulate how many COVID cases would get transmitted
+
+-   Explore how vaccination reduces transmission
+
+-   Do this for different areas in Australia
+
+## Do we know how much contact people have?
+
+-   We don't. Well, not in Australia. Yet.
+
+-   You need to conduct a surveys where people diary the amount and manner of daily contacts they have.
+
+-   [Mossong et al](https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.0050074) have this for 8 countries in Europe
+
+::: notes
+-   So we have a pretty good idea of the amount of contact people have in Europe.
+:::
+
+## Method of Mossong et al
+
+-   Random weekday: record every person in contact with.
+-   Physical contact:
+    -   skin-to-skin contact (kiss or handshake)
+-   Non-physical contact:
+    -   two-way conversation with 3+ words in physical presence of a person
+
+## Method of Mossong et al
+
+-   Participants provide info on:
+    -   age and sex of each contact person
+    -   location (home, work, school, leisure, transport, or other)
+    -   time spent together
+    -   frequency of usual contacts with this individual
+
+## Contact surveys are 💰 💰 💰
+
+-   Part of why we don't have them in Australia
+-   Can we get a contact matrix for a country not on the list?
+-   We need to have a best guess from existing surveys
+
+## Synthetic contact matrices
+
+-   Pre-existing statistical methodologies project empirical contact matrices to new countries.
+-   New projected contact matrices: "synthetic contact matrices"
+-   Use existing contact surveys (e.g., Mossong)
+-   Use setting-specific survey data on household, school, classroom, and workplace composition
+-   Combine with empirical data on contact patterns in Europe using statistical models
+
+## Prem et al
+
+-   Prem et al. have one of the most widely used approaches to synthetic contact matrices
+-   Extensively applied across infectious diseases applications
+-   Initially provided 155 matrices for 155 countries (177 later in 2020)
+
+## Brief explainer of Prem
+
+-   There is a lot more to the method! Not enough time.
+
+-   Core ideas:
+
+    -   Build a model from the POLYMOD study, predicting number of contacts
+    -   Incorporate key age information for different locations (home, work, school, other)
+    -   Extrapolate the number of contacts to different countries, using age information from those countries
+    -   Create a new contact matrix for a given country
+
+##  {background-image="images/prem-dir-mats.png" background-size="contain"}
+
+## {background-image="images/prem-spreadsheet.png" background-size="contain"}
+
+::: notes
+**image of spreadsheet booklet of contact matrices**
+
+The main issue with this is that we don't have much control over the outputs.
+
+And maybe that doesn't matter to you if you just need to look at the contact matrices for a given country.
+
+But what we needed to do is get contact matrices for a given age population structure.
+:::
+
+## Populations are different
+
+```{r}
+melb_syd <- combine_abs_two_age_distributions(
+  lga_1 = "Melbourne (C)",
+  lga_2 = "Sydney (C)"
+)
+
+plot_two_abs_distributions(melb_syd)
+```
+
+## Populations are different
+
+```{r}
+alice_syd <- combine_abs_two_age_distributions(
+  lga_1 = "Alice Springs (T)",
+  lga_2 = "Sydney (C)"
+)
+
+plot_two_abs_distributions(alice_syd)
+```
+
+
+## What we want
+
+- We want to be able use an **age distribution population** 
+
+```{r}
+#| label: fairfield
+fairfield <- abs_age_lga("Fairfield (C)")
+fairfield
+```
+
+
+## What we want
+
+- Input **age distribution population** and get out a contact matrix.
+
+```{r}
+#| eval: false
+#| echo: true
+
+extrapolate_from_data(
+  population = fairfield
+)
+```
+
+
+## How do we extend this method?
+
+- [Code is provided](https://github.com/kieshaprem/synthetic-contact-matrices), but a few key issues:
+
+  - It was code not written for reuse (code vs software)
+
+    - No clear interface on how to get inputs for a given country or region.
+
+    - Not clear if the code matched the methods
+
+    - Potential issues with method
+
+
+## Build our own extension
+
+- Nick Golding wrote a new method that was able to be more flexible, using GAMs instead of Bayesian approach.
+
+- I was tasked with writing software from initial model fitting code, with guidance from Nick
+
+- Named the package, `conmat` [repo](https://github.com/njtierney/conmat), creating a home for code for others to contribute to.
+
+## Demonstration of conmat
+
+```{r}
+#| echo: true
+#| label: get-fairfield
+library(conmat)
+fairfield <- abs_age_lga("Fairfield (C)")
+fairfield
+```
+
+## Extrapoloate to a new population
+
+```{r}
+#| label: extrapolate-fairfield
+#| echo: true
+synthetic_fairfield <- extrapolate_polymod(
+ population = fairfield
+)
+```
+
+## extrapolate to a new population
+
+```{r}
+#| label: show-fairfield
+#| echo: true
+synthetic_fairfield
+```
+
+## plot new contact matrix
+
+```{r}
+#| label: plot-matrix-fairfield
+#| echo: true
+plot_matrix(synthetic_fairfield$home)
+```
+
+```{r}
+#| label: polymod-extrapolate
+synthetic_polymod <- extrapolate_polymod(
+ population = get_polymod_population()
+)
+```
+
+## plot POLYMOD
+
+```{r}
+#| label: plot-matrix-polymod
+#| echo: true
+plot_matrix(synthetic_polymod$home)
+```
+
+## Challenges in Design
+
+```{r}
+#| eval: false
+#| echo: true
+synthetic_fairfield <- extrapolate_polymod(
+ population = fairfield
+)
+```
+
+
+- Model fitting is fixed and rigid
+- Design decision to provide access to fitting the model
+- Fixed and rigid means you cannot change the 
+
+## Challenges in Design
+
+- Hard coding variables
+
+- age and population columns are currently required to be named `lower.age.limit` and `population`
+
+- At least 2 potential ways to resolve this
+
+```{r}
+#| echo: true
+fairfield
+```
+
+## Challenges in Design
+    
+  1.  Provide arguments for specifying the age and population information (`age_col` and `population_col`)
+  
+```{r}
+#| eval: false
+#| echo: true
+extrapolate_polymod(
+ population = fairfield,
+ age_col = lower.age.limit,
+ population_col = population
+)
+```
+  
+## Challenges in Design
+  
+  2.  Some kind of class based approach, where we encode or validate the `age` and `population` columns.
+  
+```{r}
+#| eval: false
+#| echo: true
+fairfield_pop <- conmat_population(
+  data = fairfield,
+  age = lower.age.limit,
+  population = population
+)
+extrapolate_polymod(
+ population = fairfield_pop
+)
+```
+  
+## Challenges in Design
+
+- Rigid model design means easy to use, at cost of flexibility
+- Specified variable names is fragile, but saves typing
+- Extra functions could always be added to be more flexible variants
+
+## Future Directions
+
+::: {.fragment .fade-up}
+-   Interface to changing GAM model terms or specify model
+-   Better automatic plotting
+-   Validating against Prem and other methods
+-   Allowing more flexible uses of other data sources
+:::
+
+# Thanks
+
+-   Nick Golding
+-   Aarathy Babu
+-   Michael Lydeamore
+
+# Learning more
+
+`r icon_box` [conmat package](https://github.com/njtierney/conmat)
+
+`r icon_link` [talk link]()
+
+`r icon_twitter` nj_tierney
+
+`r icon_github` njtierney
+
+`r icon_plane` nicholas.tierney\@gmail.com
+
+# **End.**
+

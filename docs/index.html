@@ -1,0 +1,1539 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="index_files/libs/clipboard/clipboard.min.js"></script>
+<script src="index_files/libs/quarto-html/tabby.min.js"></script>
+<script src="index_files/libs/quarto-html/popper.min.js"></script>
+<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="index_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.1.168">
+
+  <meta name="author" content="Nicholas Tierney">
+  <title>NZRSE conf</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+      }
+    pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+    div.sourceCode
+      { color: #f8f8f2;  }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #f8f8f2; } /* Normal */
+    code span.al { color: #f07178; background-color: #2a0f15; font-weight: bold; } /* Alert */
+    code span.an { color: #d4d0ab; } /* Annotation */
+    code span.at { color: #00e0e0; } /* Attribute */
+    code span.bn { color: #d4d0ab; } /* BaseN */
+    code span.bu { color: #abe338; } /* BuiltIn */
+    code span.cf { color: #ffa07a; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #abe338; } /* Char */
+    code span.cn { color: #ffd700; } /* Constant */
+    code span.co { color: #f8f8f2; font-style: italic; } /* Comment */
+    code span.cv { color: #ffd700; } /* CommentVar */
+    code span.do { color: #f8f8f2; } /* Documentation */
+    code span.dt { color: #ffa07a; } /* DataType */
+    code span.dv { color: #d4d0ab; } /* DecVal */
+    code span.er { color: #f07178; text-decoration: underline; } /* Error */
+    code span.ex { color: #00e0e0; font-weight: bold; } /* Extension */
+    code span.fl { color: #d4d0ab; } /* Float */
+    code span.fu { color: #ffa07a; } /* Function */
+    code span.im { color: #abe338; } /* Import */
+    code span.in { color: #d4d0ab; } /* Information */
+    code span.kw { color: #ffa07a; font-weight: bold; } /* Keyword */
+    code span.op { color: #ffa07a; } /* Operator */
+    code span.ot { color: #00e0e0; } /* Other */
+    code span.pp { color: #dcc6e0; } /* Preprocessor */
+    code span.re { color: #00e0e0; background-color: #f8f8f2; } /* RegionMarker */
+    code span.sc { color: #abe338; } /* SpecialChar */
+    code span.ss { color: #abe338; } /* SpecialString */
+    code span.st { color: #abe338; } /* String */
+    code span.va { color: #00e0e0; } /* Variable */
+    code span.vs { color: #abe338; } /* VerbatimString */
+    code span.wa { color: #dcc6e0; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto.css" id="theme">
+  <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+
+  .callout {
+    margin-top: 1em;
+    margin-bottom: 1em;  
+    border-radius: .25rem;
+  }
+
+  .callout.callout-style-simple { 
+    padding: 0em 0.5em;
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+    display: flex;
+  }
+
+  .callout.callout-style-default {
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+  }
+
+  .callout .callout-body-container {
+    flex-grow: 1;
+  }
+
+  .callout.callout-style-simple .callout-body {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-style-default .callout-body {
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-captioned.callout-style-simple .callout-body {
+    margin-top: 0.2em;
+  }
+
+  .callout:not(.callout-captioned) .callout-body {
+      display: flex;
+  }
+
+  .callout:not(.no-icon).callout-captioned.callout-style-simple .callout-content {
+    padding-left: 1.6em;
+  }
+
+  .callout.callout-captioned .callout-header {
+    padding-top: 0.2em;
+    margin-bottom: -0.2em;
+  }
+
+  .callout.callout-captioned .callout-caption  p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+    
+  .callout.callout-captioned.callout-style-simple .callout-content  p {
+    margin-top: 0;
+  }
+
+  .callout.callout-captioned.callout-style-default .callout-content  p {
+    margin-top: 0.7em;
+  }
+
+  .callout.callout-style-simple div.callout-caption {
+    border-bottom: none;
+    font-size: .9rem;
+    font-weight: 600;
+    opacity: 75%;
+  }
+
+  .callout.callout-style-default  div.callout-caption {
+    border-bottom: none;
+    font-weight: 600;
+    opacity: 85%;
+    font-size: 0.9rem;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-default div.callout-content {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-simple .callout-icon::before {
+    height: 1rem;
+    width: 1rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+  }
+
+  .callout.callout-style-default .callout-icon::before {
+    height: 0.9rem;
+    width: 0.9rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 0.9rem 0.9rem;
+  }
+
+  .callout-caption {
+    display: flex
+  }
+    
+  .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  .callout.no-icon::before {
+    display: none !important;
+  }
+
+  .callout.callout-captioned .callout-body > .callout-content > :last-child {
+    margin-bottom: 0.5rem;
+  }
+
+  .callout.callout-captioned .callout-icon::before {
+    margin-top: .5rem;
+    padding-right: .5rem;
+  }
+
+  .callout:not(.callout-captioned) .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  /* Callout Types */
+
+  div.callout-note {
+    border-left-color: #4582ec !important;
+  }
+
+  div.callout-note .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEU0lEQVRYCcVXTWhcVRQ+586kSUMMxkyaElstCto2SIhitS5Ek8xUKV2poatCcVHtUlFQk8mbaaziwpWgglJwVaquitBOfhQXFlqlzSJpFSpIYyXNjBNiTCck7x2/8/LeNDOZxDuEkgOXe++553zfefee+/OYLOXFk3+1LLrRdiO81yNqZ6K9cG0P3MeFaMIQjXssE8Z1JzLO9ls20MBZX7oG8w9GxB0goaPrW5aNMp1yOZIa7Wv6o2ykpLtmAPs/vrG14Z+6d4jpbSKuhdcSyq9wGMPXjonwmESXrriLzFGOdDBLB8Y6MNYBu0dRokSygMA/mrun8MGFN3behm6VVAwg4WR3i6FvYK1T7MHo9BK7ydH+1uurECoouk5MPRyVSBrBHMYwVobG2aOXM07sWrn5qgB60rc6mcwIDJtQrnrEr44kmy+UO9r0u9O5/YbkS9juQckLed3DyW2XV/qWBBB3ptvI8EUY3I9p/67OW+g967TNr3Sotn3IuVlfMLVnsBwH4fsnebJvyGm5GeIUA3jljERmrv49SizPYuq+z7c2H/jlGC+Ghhupn/hcapqmcudB9jwJ/3jvnvu6vu5lVzF1fXyZuZZ7U8nRmVzytvT+H3kilYvH09mLWrQdwFSsFEsxFVs5fK7A0g8gMZjbif4ACpKbjv7gNGaD8bUrlk8x+KRflttr22JEMRUbTUwwDQScyzPgedQHZT0xnx7ujw2jfVfExwYHwOsDTjLdJ2ebmeQIlJ7neo41s/DrsL3kl+W2lWvAga0tR3zueGr6GL78M3ifH0rGXrBC2aAR8uYcIA5gwV8zIE8onoh8u0Fca/ciF7j1uOzEnqcIm59sEXoGc0+z6+H45V1CvAvHcD7THztu669cnp+L0okAeIc6zjbM/24LgGM1gZk7jnRu1aQWoU9sfUOuhrmtaPIO3YY1KLLWZaEO5TKUbMY5zx8W9UJ6elpLwKXbsaZ4EFl7B4bMtDv0iRipKoDQT2sNQI9b1utXFdYisi+wzZ/ri/1m7QfDgEuvgUUEIJPq3DhX/5DWNqIXDOweC2wvIR90Oq3lDpdMIgD2r0dXvGdsEW5H6x6HLRJYU7C69VefO1x8Gde1ZFSJLfWS1jbCnhtOPxmpfv2LXOA2Xk2tvnwKKPFuZ/oRmwBwqRQDcKNeVQkYcOjtWVBuM/JuYw5b6isojIkYxyYAFn5K7ZBF10fea52y8QltAg6jnMqNHFBmGkQ1j+U43HMi2xMar1Nv0zGsf1s8nUsmUtPOOrbFIR8bHFDMB5zL13Gmr/kGlCkUzedTzzmzsaJXhYawnA3UmARpiYj5ooJZiUoxFRtK3X6pgNPv+IZVPcnwbOl6f+aBaO1CNvPW9n9LmCp01nuSaTRF2YxHqZ8DYQT6WsXT+RD6eUztwYLZ8rM+rcPxamv1VQzFUkzFXvkiVrySGQgJNvXHJAxiU3/NwiC03rSf05VBaPtu/Z7/B8Yn/w7eguloAAAAAElFTkSuQmCC');
+  }
+
+  div.callout-note.callout-style-default .callout-caption {
+    background-color: #dae6fb
+  }
+
+  div.callout-important {
+    border-left-color: #d9534f !important;
+  }
+
+  div.callout-important .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEKklEQVRYCcVXTWhcVRS+575MJym48A+hSRFr00ySRQhURRfd2HYjk2SSTokuBCkU2o0LoSKKraKIBTcuFCoidGFD08nkBzdREbpQ1EDNIv8qSGMFUboImMSZd4/f9zJv8ibJMC8xJQfO3HPPPef7zrvvvnvviIkpC9nsw0UttFunbUhpFzFtarSd6WJkStVMw5xyVqYTvkwfzuf/5FgtkVoB0729j1rjXwThS7Vio+Mo6DNnvLfahoZ+i/o32lULuJ3NNiz7q6+pyAUkJaFF6JwaM2lUJlV0MlnQn5aTRbEu0SEqHUa0A4AdiGuB1kFXRfVyg5d87+Dg4DL6m2TLAub60ilj7A1Ec4odSAc8X95sHh7+ZRPCFo6Fnp7HfU/fBng/hi10CjCnWnJjsxvDNxWw0NfV6Rv5GgP3I3jGWXumdTD/3cbEOP2ZbOZp69yniG3FQ9z1jD7bnBu9Fc2tKGC2q+uAJOQHBDRiZX1x36o7fWBs7J9ownbtO+n0/qWkvW7UPIfc37WgT6ZGR++EOJyeQDSb9UB+DZ1G6DdLDzyS+b/kBCYGsYgJbSQHuThGKRcw5xdeQf8YdNHsc6ePXrlSYMBuSIAFTGAtQo+VuALo4BX83N190NWZWbynBjhOHsmNfFWLeL6v+ynsA58zDvvAC8j5PkbOcXCMg2PZFk3q8MjI7WAG/Dp9AwP7jdGBOOQkAvlFUB+irtm16I1Zw9YBcpGTGXYmk3kQIC/Cds55l+iMI3jqhjAuaoe+am2Jw5GT3Nbz3CkE12NavmzN5+erJW7046n/CH1RO/RVa8lBLozXk9uqykkGAyRXLWlLv5jyp4RFsG5vGVzpDLnIjTWgnRy2Rr+tDKvRc7Y8AyZq10jj8DqXdnIRNtFZb+t/ZRtXcDiVnzpqx8mPcDWxgARUqx0W1QB9MeUZiNrV4qP+Ehc+BpNgATsTX8ozYKL2NtFYAHc84fG7ndxUPr+AR/iQSns7uSUufAymwDOb2+NjK27lEFocm/EE2WpyIy/Hi66MWuMKJn8RvxIcj87IM5Vh9663ziW36kR0HNenXuxmfaD8JC7tfKbrhFr7LiZCrMjrzTeGx+PmkosrkNzW94ObzwocJ7A1HokLolY+AvkTiD/q1H0cN48c5EL8Crkttsa/AXQVDmutfyku0E7jShx49XqV3MFK8IryDhYVbj7Sj2P2eBxwcXoe8T8idsKKPRcnZw1b+slFTubwUwhktrfnAt7J++jwQtLZcm3sr9LQrjRzz6cfMv9aLvgmnAGvpoaGLxM4mAEaLV7iAzQ3oU0IvD5x9ix3yF2RAAuYAOO2f7PEFWCXZ4C9Pb2UsgDeVnFSpbFK7/IWu7TPTvBqzbGdCHOJQSxiEjt6IyZmxQyEJHv6xyQsYk//moVFsN2zP6fRImjfq7/n/wFDguUQFNEwugAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-important.callout-style-default .callout-caption {
+    background-color: #f7dddc
+  }
+
+  div.callout-warning {
+    border-left-color: #f0ad4e !important;
+  }
+
+  div.callout-warning .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAETklEQVRYCeVWW2gcVRg+58yaTUnizqbipZeX4uWhBEniBaoUX1Ioze52t7sRq6APio9V9MEaoWlVsFasRq0gltaAPuxms8lu0gcviE/FFOstVbSIxgcv6SU7EZqmdc7v9+9mJtNks51NTUH84ed889/PP+cmxP+d5FIbMJmNbpREu4WUkiTtCicKny0l1pIKmBzovF2S+hIJHX8iEu3hZJ5lNZGqyRrGSIQpq15AzF28jgpeY6yk6GVdrfFqdrD6Iw+QlB8g0YS2g7dyQmXM/IDhBhT0UCiRf59lfqmmDvzRt6kByV/m4JjtzuaujMUM2c5Z2d6JdKrRb3K2q6mA+oYVz8JnDdKPmmNthzkAk/lN63sYPgevrguc72aZX/L9C6x09GYyxBgCX4NlvyGUHOKELlm5rXeR1kchuChJt4SSwyddZRXgvwMGvYo4QSlk3/zkHD8UHxwVJA6zjZZqP8v8kK8OWLnIZtLyCAJagYC4rTGW/9Pqj92N/c+LUaAj27movwbi19tk/whRCIE7Q9vyI6yvRpftAKVTdUjOW40X3h5OXsKCdmFcx0xlLJoSuQngnrJe7Kcjm4OMq9FlC7CMmScQANuNvjfP3PjGXDBaUQmbp296S5L4DrpbrHN1T87ZVEZVCzg1FF0Ft+dKrlLukI+/c9ENo+TvlTDbYFvuKPtQ9+l052rXrgKoWkDAFnvh0wTOmYn8R5f4k/jN/fZiCM1tQx9jQQ4ANhqG4hiL0qIFTGViG9DKB7GYzgubnpofgYRwO+DFjh0Zin2m4b/97EDkXkc+f6xYAPX0KK2I/7fUQuwzuwo/L3AkcjugPNixC8cHf0FyPjWlItmLxWw4Ou9YsQCr5fijMGoD/zpdRy95HRysyXA74MWOnscpO4j2y3HAVisw85hX5+AFBRSHt4ShfLFkIMXTqyKFc46xdzQM6XbAi702a7sy04J0+feReMFKp5q9esYLCqAZYw/k14E/xcLLsFElaornTuJB0svMuJINy8xkIYuL+xPAlWRceH6+HX7THJ0djLUom46zREu7tTkxwmf/FdOZ/sh6Q8qvEAiHpm4PJ4a/doJe0gH1t+aHRgCzOvBvJedEK5OFE5jpm4AGP2a8Dxe3gGJ/pAutug9Gp6he92CsSsWBaEcxGx0FHytmIpuqGkOpldqNYQK8cSoXvd+xLxXADw0kf6UkJNFtdo5MOgaLjiQOQHcn+A6h5NuL2s0qsC2LOM75PcF3yr5STuBSAcGG+meA14K/CI21HcS4LBT6tv0QAh8Dr5l93AhZzG5ZJ4VxAqdZUEl9z7WJ4aN+svMvwHHL21UKTd1mqvChH7/Za5xzXBBKrUcB0TQ+Ulgkfbi/H/YT5EptrGzsEK7tR1B7ln9BBwckYfMiuSqklSznIuoIIOM42MQO+QnduCoFCI0bpkzjCjddHPN/F+2Yu+sd9bKNpVwHhbS3LluK/0zgfwD0xYI5dXuzlQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-warning.callout-style-default .callout-caption {
+    background-color: #fcefdc
+  }
+
+  div.callout-tip {
+    border-left-color: #02b875 !important;
+  }
+
+  div.callout-tip .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAADr0lEQVRYCe1XTWgTQRj9ZjZV8a9SPIkKgj8I1bMHsUWrqYLVg4Ue6v9BwZOxSYsIerFao7UiUryIqJcqgtpimhbBXoSCVxUFe9CTiogUrUp2Pt+3aUI2u5vdNh4dmMzOzHvvezuz8xNFM0mjnbXaNu1MvFWRXkXEyE6aYOYJpdW4IXuA4r0fo8qqSMDBU0v1HJUgVieAXxzCsdE/YJTdFcVIZQNMyhruOMJKXYFoLfIfIvVIMWdsrd+Rpd86ZmyzzjJmLStqRn0v8lzkb4rVIXvnpScOJuAn2ACC65FkPzEdEy4TPWRLJ2h7z4cArXzzaOdKlbOvKKX25Wl00jSnrwVxAg3o4dRxhO13RBSdNvH0xSARv3adTXbBdTf64IWO2vH0LT+cv4GR1DJt+DUItaQogeBX/chhbTBxEiZ6gftlDNXTrvT7co4ub5A6gp9HIcHvzTa46OS5fBeP87Qm0fQkr4FsYgVQ7Qg+ZayaDg9jhg1GkWj8RG6lkeSacrrHgDaxdoBiZPg+NXV/KifMuB6//JmYH4CntVEHy/keA6x4h4CU5oFy8GzrBS18cLJMXcljAKB6INjWsRcuZBWVaS3GDrqB7rdapVIeA+isQ57Eev9eCqzqOa81CY05VLd6SamW2wA2H3SiTbnbSxmzfp7WtKZkqy4mdyAlGx7ennghYf8voqp9cLSgKdqNfa6RdRsAAkPwRuJZNbpByn+RrJi1RXTwdi8RQF6ymDwGMAtZ6TVE+4uoKh+MYkcLsT0Hk8eAienbiGdjJHZTpmNjlbFJNKDVAp2fJlYju6IreQxQ08UJDNYdoLSl6AadO+fFuCQqVMB1NJwPm69T04Wv5WhfcWyfXQB+wXRs1pt+nCknRa0LVzSA/2B+a9+zQJadb7IyyV24YAxKp2Jqs3emZTuNnKxsah+uabKbMk7CbTgJx/zIgQYErIeTKRQ9yD9wxVof5YolPHqaWo7TD6tJlh7jQnK5z2n3+fGdggIOx2kaa2YI9QWarc5Ce1ipNWMKeSG4DysFF52KBmTNMmn5HqCFkwy34rDg05gDwgH3bBi+sgFhN/e8QvRn8kbamCOhgrZ9GJhFDgfcMHzFb6BAtjKpFhzTjwv1KCVuxHvCbsSiEz4CANnj84cwHdFXAbAOJ4LTSAawGWFn5tDhLMYz6nWeU2wJfIhmIJBefcd/A5FWQWGgrWzyORZ3Q6HuV+Jf0Bj+BTX69fm1zWgK7By1YTXchFDORywnfQ7GpzOo6S+qECrsx2ifVQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-tip.callout-style-default .callout-caption {
+    background-color: #ccf1e3
+  }
+
+  div.callout-caution {
+    border-left-color: #fd7e14 !important;
+  }
+
+  div.callout-caution .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAACV0lEQVRYCdVWzWoUQRCuqp2ICBLJXgITZL1EfQDBW/bkzUMUD7klD+ATSHBEfAIfQO+iXsWDxJsHL96EHAwhgzlkg8nBg25XWb0zIb0zs9muYYWkoKeru+vn664fBqElyZNuyh167NXJ8Ut8McjbmEraKHkd7uAnAFku+VWdb3reSmRV8PKSLfZ0Gjn3a6Xlcq9YGb6tADjn+lUfTXtVmaZ1KwBIvFI11rRXlWlatwIAAv2asaa9mlB9wwygiDX26qaw1yYPzFXg2N1GgG0FMF8Oj+VIx7E/03lHx8UhvYyNZLN7BwSPgekXXLribw7w5/c8EF+DBK5idvDVYtEEwMeYefjjLAdEyQ3M9nfOkgnPTEkYU+sxMq0BxNR6jExrAI31H1rzvLEfRIdgcv1XEdj6QTQAS2wtstEALLG1yEZ3QhH6oDX7ExBSFEkFINXH98NTrme5IOaaA7kIfiu2L8A3qhH9zRbukdCqdsA98TdElyeMe5BI8Rs2xHRIsoTSSVFfCFCWGPn9XHb4cdobRIWABNf0add9jakDjQJpJ1bTXOJXnnRXHRf+dNL1ZV1MBRCXhMbaHqGI1JkKIL7+i8uffuP6wVQAzO7+qVEbF6NbS0LJureYcWXUUhH66nLR5rYmva+2tjRFtojkM2aD76HEGAD3tPtKM309FJg5j/K682ywcWJ3PASCcycH/22u+Bh7Aa0ehM2Fu4z0SAE81HF9RkB21c5bEn4Dzw+/qNOyXr3DCTQDMBOdhi4nAgiFDGCinIa2owCEChUwD8qzd03PG+qdW/4fDzjUMcE1ZpIAAAAASUVORK5CYII=');
+  }
+
+  div.callout-caution.callout-style-default .callout-caption {
+    background-color: #ffe5d0
+  }
+
+  </style>
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-dark">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="center">
+  <h1 class="title">NZRSE conf</h1>
+  <p class="subtitle">Extendable projection of social contact matrices</p>
+  <p class="author">Nicholas Tierney</p>
+  <p class="institute">Telethon Kids Institute</p>
+</section>
+
+<section class="slide level2">
+
+<div class="cell" data-hash="index_cache/revealjs/source-r-files_278519e9e317b091278c838fa65d48f6">
+
+</div>
+</section>
+<section id="the-story-so-far" class="slide level2">
+<h2>The story so far</h2>
+<ul>
+<li class="fragment"><p>2008-2012: Undergraduate + honours in Psychology</p></li>
+<li class="fragment"><p>2013 - 2017: PhD Statistics, QUT</p>
+<ul>
+<li class="fragment">Exploratory Data Analysis (EDA)</li>
+<li class="fragment">Bayesian Statistics</li>
+<li class="fragment">Geospatial statistics / Optimal facility placement</li>
+</ul></li>
+<li class="fragment"><p>2018 - 2020: Research Fellow / Lecturer at Monash</p>
+<ul>
+<li class="fragment">Design and improve tools for (exploratory) data analysis</li>
+<li class="fragment">Teach introduction to data analysis (ETC1010)</li>
+</ul></li>
+</ul>
+</section>
+<section id="visdatvis_datairquality" class="slide level2">
+<h2><code>visdat::vis_dat(airquality)</code></h2>
+
+<img data-src="index_files/figure-revealjs/show-visdat-1.png" style="width:150.0%" class="r-stretch"></section>
+<section id="naniargg_miss_upsetriskfactors" class="slide level2">
+<h2><code>naniar::gg_miss_upset(riskfactors)</code></h2>
+
+<img data-src="index_files/figure-revealjs/gg-miss-upset-1.png" style="width:150.0%" class="r-stretch"></section>
+<section id="brolgar---take-spaghetti" class="slide level2">
+<h2><code>brolgar</code> - take spaghetti</h2>
+
+<img data-src="index_files/figure-revealjs/gg-brolgar-1.png" width="960" class="r-stretch"></section>
+<section id="brolgar---spread-spaghetti" class="slide level2">
+<h2><code>brolgar</code> - spread spaghetti</h2>
+
+<img data-src="index_files/figure-revealjs/gg-brolgar-spread-1.png" width="960" class="r-stretch"></section>
+<section id="section" class="slide level2" data-background-image="images/greta-logo-background.png" data-background-size="contain">
+<h2></h2>
+<!-- Professor Nick Golding -->
+<!-- [greta-stats.org](https://www.greta-stats.org) -->
+</section>
+<section id="infectious-disease-spread" class="slide level2">
+<h2>Infectious Disease Spread</h2>
+<ul>
+<li class="fragment">Diseases like COVID19 and Influenza spread through face to face social contact</li>
+</ul>
+<aside class="notes">
+<ul>
+<li>I think we’re all familiar enough with COVID to know what I mean here.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+<ul>
+<li class="fragment"><p>Describe which 3 people had contact:</p>
+<ul>
+<li class="fragment"><p>James has had contact with Luke</p></li>
+<li class="fragment"><p>Nick hasn’t had contact with either</p></li>
+<li class="fragment"><p>(Note having contact with one person means it goes both ways)</p></li>
+</ul></li>
+</ul>
+<aside class="notes">
+<p>So say we have 3 people and we want to describe who have had face to face contact in the past week. Let’s take myself and my two brothers. They’re both in Brisbane and I’m not, so I haven’t seen them. We might say:</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="example-visually" class="slide level2">
+<h2>Example: visually</h2>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-4-1.png" width="960" class="r-stretch"><aside class="notes">
+<p>This shows whether people had contact, yes or no. We can see that everyone had contact with one another except for Nick, and with Nick. Note that we could change this from something logical - “did they have contact” to “how many times did you have contact?”</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="example-matrix" class="slide level2">
+<h2>Example: matrix</h2>
+<div class="cell" data-hash="index_cache/revealjs/example-matrix_5f64fb6399d1aa4a31c715bd5c0c84e9">
+<div class="cell-output cell-output-stdout">
+<pre style="font-size:170%;"><code>      James  Luke  Nick
+James  TRUE  TRUE FALSE
+Luke   TRUE  TRUE FALSE
+Nick  FALSE FALSE  TRUE</code></pre>
+</div>
+</div>
+</section>
+<section id="logical-numeric" class="slide level2">
+<h2>Logical –&gt; Numeric</h2>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-6-1.png" width="960" class="r-stretch"><aside class="notes">
+<p>So now we have not just, “Did you have contact?”, but, “How many times did you have contact?” Instead of individual people, we could change this to age groups.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="people-age-groups" class="slide level2">
+<h2>People –&gt; Age groups</h2>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-7-1.png" width="960" class="r-stretch"></section>
+<section id="what-do-you-do-with-this" class="slide level2">
+<h2>What do you do with this?</h2>
+<ul>
+<li class="fragment"><p>Well, if we know how many times people have contact, then we can have an idea of which age groups will spread COVID</p></li>
+<li class="fragment"><p>Simulate how many COVID cases would get transmitted</p></li>
+<li class="fragment"><p>Explore how vaccination reduces transmission</p></li>
+<li class="fragment"><p>Do this for different areas in Australia</p></li>
+</ul>
+</section>
+<section id="do-we-know-how-much-contact-people-have" class="slide level2">
+<h2>Do we know how much contact people have?</h2>
+<ul>
+<li class="fragment"><p>We don’t. Well, not in Australia. Yet.</p></li>
+<li class="fragment"><p>You need to conduct a surveys where people diary the amount and manner of daily contacts they have.</p></li>
+<li class="fragment"><p><a href="https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.0050074">Mossong et al</a> have this for 8 countries in Europe</p></li>
+</ul>
+<aside class="notes">
+<ul>
+<li>So we have a pretty good idea of the amount of contact people have in Europe.</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="method-of-mossong-et-al" class="slide level2">
+<h2>Method of Mossong et al</h2>
+<ul>
+<li class="fragment">Random weekday: record every person in contact with.</li>
+<li class="fragment">Physical contact:
+<ul>
+<li class="fragment">skin-to-skin contact (kiss or handshake)</li>
+</ul></li>
+<li class="fragment">Non-physical contact:
+<ul>
+<li class="fragment">two-way conversation with 3+ words in physical presence of a person</li>
+</ul></li>
+</ul>
+</section>
+<section id="method-of-mossong-et-al-1" class="slide level2">
+<h2>Method of Mossong et al</h2>
+<ul>
+<li class="fragment">Participants provide info on:
+<ul>
+<li class="fragment">age and sex of each contact person</li>
+<li class="fragment">location (home, work, school, leisure, transport, or other)</li>
+<li class="fragment">time spent together</li>
+<li class="fragment">frequency of usual contacts with this individual</li>
+</ul></li>
+</ul>
+</section>
+<section id="contact-surveys-are" class="slide level2">
+<h2>Contact surveys are 💰 💰 💰</h2>
+<ul>
+<li class="fragment">Part of why we don’t have them in Australia</li>
+<li class="fragment">Can we get a contact matrix for a country not on the list?</li>
+<li class="fragment">We need to have a best guess from existing surveys</li>
+</ul>
+</section>
+<section id="synthetic-contact-matrices" class="slide level2">
+<h2>Synthetic contact matrices</h2>
+<ul>
+<li class="fragment">Pre-existing statistical methodologies project empirical contact matrices to new countries.</li>
+<li class="fragment">New projected contact matrices: “synthetic contact matrices”</li>
+<li class="fragment">Use existing contact surveys (e.g., Mossong)</li>
+<li class="fragment">Use setting-specific survey data on household, school, classroom, and workplace composition</li>
+<li class="fragment">Combine with empirical data on contact patterns in Europe using statistical models</li>
+</ul>
+</section>
+<section id="prem-et-al" class="slide level2">
+<h2>Prem et al</h2>
+<ul>
+<li class="fragment">Prem et al.&nbsp;have one of the most widely used approaches to synthetic contact matrices</li>
+<li class="fragment">Extensively applied across infectious diseases applications</li>
+<li class="fragment">Initially provided 155 matrices for 155 countries (177 later in 2020)</li>
+</ul>
+</section>
+<section id="brief-explainer-of-prem" class="slide level2">
+<h2>Brief explainer of Prem</h2>
+<ul>
+<li class="fragment"><p>There is a lot more to the method! Not enough time.</p></li>
+<li class="fragment"><p>Core ideas:</p>
+<ul>
+<li class="fragment">Build a model from the POLYMOD study, predicting number of contacts</li>
+<li class="fragment">Incorporate key age information for different locations (home, work, school, other)</li>
+<li class="fragment">Extrapolate the number of contacts to different countries, using age information from those countries</li>
+<li class="fragment">Create a new contact matrix for a given country</li>
+</ul></li>
+</ul>
+</section>
+<section id="section-1" class="slide level2" data-background-image="images/prem-dir-mats.png" data-background-size="contain">
+<h2></h2>
+</section>
+<section id="section-2" class="slide level2" data-background-image="images/prem-spreadsheet.png" data-background-size="contain">
+<h2></h2>
+<aside class="notes">
+<p><strong>image of spreadsheet booklet of contact matrices</strong></p>
+<p>The main issue with this is that we don’t have much control over the outputs.</p>
+<p>And maybe that doesn’t matter to you if you just need to look at the contact matrices for a given country.</p>
+<p>But what we needed to do is get contact matrices for a given age population structure.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="populations-are-different" class="slide level2">
+<h2>Populations are different</h2>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-8-1.png" width="960" class="r-stretch"></section>
+<section id="populations-are-different-1" class="slide level2">
+<h2>Populations are different</h2>
+
+<img data-src="index_files/figure-revealjs/unnamed-chunk-9-1.png" width="960" class="r-stretch"></section>
+<section id="what-we-want" class="slide level2">
+<h2>What we want</h2>
+<ul>
+<li class="fragment">We want to be able use an <strong>age distribution population</strong></li>
+</ul>
+<div class="cell" data-hash="index_cache/revealjs/fairfield_24616a5473e7c628b4ccb6d88a19b18a">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 18 × 4
+   lga           lower.age.limit  year population
+   &lt;chr&gt;                   &lt;dbl&gt; &lt;dbl&gt;      &lt;dbl&gt;
+ 1 Fairfield (C)               0  2020      12261
+ 2 Fairfield (C)               5  2020      13093
+ 3 Fairfield (C)              10  2020      13602
+ 4 Fairfield (C)              15  2020      14323
+ 5 Fairfield (C)              20  2020      15932
+ 6 Fairfield (C)              25  2020      16190
+ 7 Fairfield (C)              30  2020      14134
+ 8 Fairfield (C)              35  2020      13034
+ 9 Fairfield (C)              40  2020      12217
+10 Fairfield (C)              45  2020      13449
+11 Fairfield (C)              50  2020      13419
+12 Fairfield (C)              55  2020      13652
+13 Fairfield (C)              60  2020      12907
+14 Fairfield (C)              65  2020      10541
+15 Fairfield (C)              70  2020       8227
+16 Fairfield (C)              75  2020       5598
+17 Fairfield (C)              80  2020       4006
+18 Fairfield (C)              85  2020       4240</code></pre>
+</div>
+</div>
+</section>
+<section id="what-we-want-1" class="slide level2">
+<h2>What we want</h2>
+<ul>
+<li class="fragment">Input <strong>age distribution population</strong> and get out a contact matrix.</li>
+</ul>
+<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-11_dfdbed0020300544c3c78ae3cf521f0f">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">extrapolate_from_data</span>(</span>
+<span id="cb3-2"><a href="#cb3-2"></a>  <span class="at">population =</span> fairfield</span>
+<span id="cb3-3"><a href="#cb3-3"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="how-do-we-extend-this-method" class="slide level2">
+<h2>How do we extend this method?</h2>
+<ul>
+<li class="fragment"><p><a href="https://github.com/kieshaprem/synthetic-contact-matrices">Code is provided</a>, but a few key issues:</p>
+<ul>
+<li class="fragment"><p>It was code not written for reuse (code vs software)</p>
+<ul>
+<li class="fragment"><p>No clear interface on how to get inputs for a given country or region.</p></li>
+<li class="fragment"><p>Not clear if the code matched the methods</p></li>
+<li class="fragment"><p>Potential issues with method</p></li>
+</ul></li>
+</ul></li>
+</ul>
+</section>
+<section id="build-our-own-extension" class="slide level2">
+<h2>Build our own extension</h2>
+<ul>
+<li class="fragment"><p>Nick Golding wrote a new method that was able to be more flexible, using GAMs instead of Bayesian approach.</p></li>
+<li class="fragment"><p>I was tasked with writing software from initial model fitting code, with guidance from Nick</p></li>
+<li class="fragment"><p>Named the package, <code>conmat</code> <a href="https://github.com/njtierney/conmat">repo</a>, creating a home for code for others to contribute to.</p></li>
+</ul>
+</section>
+<section id="demonstration-of-conmat" class="slide level2">
+<h2>Demonstration of conmat</h2>
+<div class="cell" data-hash="index_cache/revealjs/get-fairfield_ec783998d9e68502d98c7beb5b8c6e3e">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu">library</span>(conmat)</span>
+<span id="cb4-2"><a href="#cb4-2"></a>fairfield <span class="ot">&lt;-</span> <span class="fu">abs_age_lga</span>(<span class="st">"Fairfield (C)"</span>)</span>
+<span id="cb4-3"><a href="#cb4-3"></a>fairfield</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 18 × 4
+   lga           lower.age.limit  year population
+   &lt;chr&gt;                   &lt;dbl&gt; &lt;dbl&gt;      &lt;dbl&gt;
+ 1 Fairfield (C)               0  2020      12261
+ 2 Fairfield (C)               5  2020      13093
+ 3 Fairfield (C)              10  2020      13602
+ 4 Fairfield (C)              15  2020      14323
+ 5 Fairfield (C)              20  2020      15932
+ 6 Fairfield (C)              25  2020      16190
+ 7 Fairfield (C)              30  2020      14134
+ 8 Fairfield (C)              35  2020      13034
+ 9 Fairfield (C)              40  2020      12217
+10 Fairfield (C)              45  2020      13449
+11 Fairfield (C)              50  2020      13419
+12 Fairfield (C)              55  2020      13652
+13 Fairfield (C)              60  2020      12907
+14 Fairfield (C)              65  2020      10541
+15 Fairfield (C)              70  2020       8227
+16 Fairfield (C)              75  2020       5598
+17 Fairfield (C)              80  2020       4006
+18 Fairfield (C)              85  2020       4240</code></pre>
+</div>
+</div>
+</section>
+<section id="extrapoloate-to-a-new-population" class="slide level2">
+<h2>Extrapoloate to a new population</h2>
+<div class="cell" data-hash="index_cache/revealjs/extrapolate-fairfield_d7d724608ce2377aa9027da5a9d6a55e">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>synthetic_fairfield <span class="ot">&lt;-</span> <span class="fu">extrapolate_polymod</span>(</span>
+<span id="cb6-2"><a href="#cb6-2"></a> <span class="at">population =</span> fairfield</span>
+<span id="cb6-3"><a href="#cb6-3"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="extrapolate-to-a-new-population" class="slide level2">
+<h2>extrapolate to a new population</h2>
+<div class="cell" data-hash="index_cache/revealjs/show-fairfield_61e0b08ec3bedcf5d91eebdc74a5b06d">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>synthetic_fairfield</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$home
+              [0,5)     [5,10)    [10,15)    [15,20)    [20,25)    [25,30)
+[0,5)    0.55937722 0.38605578 0.17917034 0.11728346 0.17494283 0.37757782
+[5,10)   0.45004867 0.74634125 0.45633287 0.17768035 0.11763396 0.20425143
+[10,15)  0.27441817 0.48678530 0.83400880 0.44036841 0.16102946 0.11745813
+[15,20)  0.22855433 0.22835607 0.44905886 0.76940487 0.38040014 0.14104260
+[20,25)  0.33238719 0.17819852 0.18860264 0.37959322 0.70468036 0.35514830
+[25,30)  0.56775631 0.26871520 0.14213635 0.14225059 0.33082841 0.67959783
+[30,35)  0.66274730 0.47809697 0.22250688 0.10260798 0.11221744 0.30171394
+[35,40)  0.44730888 0.57299240 0.41853198 0.16576020 0.07660462 0.09834327
+[40,45)  0.22940356 0.38619579 0.52331490 0.33408950 0.12806613 0.06637604
+[45,50)  0.15650537 0.19539202 0.35968238 0.44381733 0.27749613 0.11513026
+[50,55)  0.16636819 0.12546892 0.16872119 0.29621590 0.36490096 0.24243058
+[55,60)  0.18849101 0.12613868 0.09431281 0.12533086 0.22642390 0.29336326
+[60,65)  0.15802431 0.13593426 0.08217401 0.05998173 0.08471409 0.15999501
+[65,70)  0.09570148 0.10835705 0.07957739 0.04579578 0.03616018 0.05388495
+[70,75)  0.05294941 0.06406294 0.06090246 0.04229044 0.02719440 0.02414816
+[75,Inf) 0.05027334 0.06177428 0.06258821 0.05725974 0.05241443 0.04957133
+            [30,35)    [35,40)    [40,45)    [45,50)    [50,55)    [55,60)
+[0,5)    0.52917112 0.35928119 0.16939406 0.11519344 0.13626562 0.17966074
+[5,10)   0.48329112 0.65571410 0.41431360 0.19359920 0.13964318 0.17105926
+[10,15)  0.23677472 0.54327687 0.65979878 0.38734840 0.18766575 0.14156558
+[15,20)  0.11969489 0.24277750 0.49308926 0.53180522 0.30843042 0.15756021
+[20,25)  0.14170296 0.12618114 0.23349604 0.41373381 0.42158607 0.25650758
+[25,30)  0.34032571 0.14130462 0.12607919 0.21020383 0.33972088 0.35195852
+[30,35)  0.59870582 0.29219734 0.13057778 0.11693882 0.17967313 0.28378112
+[35,40)  0.26869822 0.47143003 0.24209121 0.12209763 0.10846906 0.15915326
+[40,45)  0.09510824 0.22856149 0.37957646 0.22772625 0.12424619 0.10744873
+[45,50)  0.06897799 0.09490577 0.20492757 0.37893998 0.25668045 0.14088809
+[50,55)  0.11465273 0.07258549 0.09102565 0.20497849 0.43964817 0.30555261
+[55,60)  0.21618480 0.11053156 0.06773859 0.08440917 0.21854557 0.50930064
+[60,65)  0.22453226 0.17614479 0.08929441 0.05439145 0.07522306 0.22078229
+[65,70)  0.10788631 0.15884264 0.12268457 0.06109755 0.04006227 0.06426870
+[70,75)  0.03740429 0.07617792 0.10953296 0.08157081 0.04217937 0.03192569
+[75,Inf) 0.04806763 0.05451776 0.08469951 0.12256805 0.12477643 0.10136536
+            [60,65)    [65,70)    [70,75)  [75,Inf)
+[0,5)    0.17300920 0.12313121 0.09835800 0.1303466
+[5,10)   0.20946349 0.17823707 0.12823699 0.1623448
+[10,15)  0.16474834 0.18129131 0.15561482 0.1679962
+[15,20)  0.11792451 0.12728375 0.14073654 0.1589760
+[20,25)  0.13472693 0.09620881 0.10322754 0.1520150
+[25,30)  0.22299066 0.11727108 0.08591414 0.1419087
+[30,35)  0.29909854 0.19199785 0.10800225 0.1272426
+[35,40)  0.24610389 0.25556251 0.17457113 0.1259902
+[40,45)  0.14895519 0.21688555 0.23123415 0.1615744
+[45,50)  0.11429749 0.14456195 0.20629207 0.2292049
+[50,55)  0.15763916 0.11714872 0.14181890 0.2705644
+[55,60)  0.33064807 0.15801247 0.11408222 0.2478890
+[60,65)  0.49089454 0.29607266 0.14276766 0.1795526
+[65,70)  0.19216238 0.39381011 0.23939574 0.1323827
+[70,75)  0.05648987 0.15973163 0.30328341 0.1473635
+[75,Inf) 0.08199238 0.09569276 0.19486913 0.4023698
+
+$work
+                [0,5)       [5,10)     [10,15)     [15,20)    [20,25)
+[0,5)    0.0094683883 0.0032734722 0.002816215 0.011884040 0.04908195
+[5,10)   0.0045967037 0.0060609400 0.005933911 0.017288984 0.06254511
+[10,15)  0.0019812806 0.0036442034 0.017193699 0.043289867 0.10052098
+[15,20)  0.0015116296 0.0021818055 0.015204953 0.139122225 0.23635155
+[20,25)  0.0019613629 0.0022899930 0.012302327 0.137345715 0.59402769
+[25,30)  0.0027662748 0.0024147272 0.009761121 0.090968718 0.52559836
+[30,35)  0.0034040485 0.0025475576 0.008310784 0.065447652 0.34975552
+[35,40)  0.0035764314 0.0025109233 0.007379301 0.051192518 0.25155153
+[40,45)  0.0036871730 0.0025128297 0.007036797 0.045837821 0.20914486
+[45,50)  0.0040915085 0.0027227246 0.007306960 0.045923901 0.19896364
+[50,55)  0.0043095498 0.0028109059 0.007162739 0.043173177 0.18013096
+[55,60)  0.0036274422 0.0023972811 0.005795537 0.032911798 0.13219103
+[60,65)  0.0021681315 0.0015802011 0.003795463 0.020101314 0.07483048
+[65,70)  0.0009439189 0.0008293203 0.002205160 0.011364312 0.03747182
+[70,75)  0.0003624376 0.0003764863 0.001254462 0.007157981 0.02251799
+[75,Inf) 0.0003319858 0.0002569713 0.001046544 0.008773102 0.03605186
+            [25,30)    [30,35)    [35,40)    [40,45)    [45,50)    [50,55)
+[0,5)    0.08541531 0.08574137 0.08075343 0.07799741 0.07073843 0.05537374
+[5,10)   0.10848344 0.11413945 0.11188038 0.11211256 0.10713263 0.09219048
+[10,15)  0.14857096 0.16021581 0.16064896 0.16063819 0.15454987 0.13990863
+[15,20)  0.23663570 0.23943721 0.24840671 0.24513567 0.22592498 0.20144928
+[20,25)  0.50944238 0.41013017 0.42767962 0.42449595 0.37401441 0.31270634
+[25,30)  0.90384900 0.65049771 0.62731445 0.62608717 0.54060631 0.43003526
+[30,35)  0.72174430 0.76563365 0.71009033 0.70271454 0.59921273 0.46830980
+[35,40)  0.50782207 0.60208714 0.67436300 0.68683499 0.58261471 0.44900894
+[40,45)  0.40989766 0.48090633 0.56225822 0.65761289 0.58845796 0.44639398
+[45,50)  0.37587745 0.44146986 0.50278802 0.58409870 0.62661604 0.50307875
+[50,55)  0.32449770 0.37879774 0.43321902 0.47880584 0.50758442 0.51659659
+[55,60)  0.22805693 0.25849245 0.30116161 0.33026505 0.32569678 0.33340526
+[60,65)  0.12248341 0.13432304 0.15716717 0.17719763 0.16863239 0.15922927
+[65,70)  0.05620608 0.05978026 0.07028509 0.08217683 0.07899226 0.06974852
+[70,75)  0.03082137 0.03121590 0.03722263 0.04599962 0.04596189 0.03898958
+[75,Inf) 0.05335541 0.05059575 0.05830441 0.08151596 0.09980679 0.09105309
+            [55,60)    [60,65)     [65,70)     [70,75)    [75,Inf)
+[0,5)    0.03055127 0.01069179 0.003563600 0.002505352 0.003870799
+[5,10)   0.05933059 0.02386746 0.007791835 0.004004593 0.003652821
+[10,15)  0.10095239 0.04800492 0.017638952 0.008149083 0.004192452
+[15,20)  0.15203986 0.08183562 0.035953414 0.018469849 0.006827851
+[20,25)  0.22681893 0.12385324 0.059426914 0.036587025 0.013436401
+[25,30)  0.28831062 0.14570531 0.069279246 0.048963671 0.021379300
+[30,35)  0.30265656 0.13882810 0.059851566 0.042479168 0.022066690
+[35,40)  0.29509387 0.13132425 0.049731355 0.030766282 0.016394444
+[40,45)  0.29780623 0.13938490 0.050355057 0.026140792 0.011839894
+[45,50)  0.33204169 0.16317160 0.061726550 0.028894226 0.010248698
+[50,55)  0.35996337 0.17841733 0.071107803 0.032883356 0.009457324
+[55,60)  0.30333468 0.15947907 0.064521417 0.030085638 0.007621199
+[60,65)  0.14935678 0.10368239 0.045752391 0.021392984 0.004924129
+[65,70)  0.06093550 0.04521728 0.027697711 0.014236741 0.003009743
+[70,75)  0.03124344 0.02227795 0.014638277 0.010420579 0.002363574
+[75,Inf) 0.06113815 0.03526483 0.022060067 0.016386764 0.005709931
+
+$school
+                [0,5)      [5,10)     [10,15)     [15,20)      [20,25)
+[0,5)    1.2358696998 0.247486320 0.032193829 0.020850528 0.0366915825
+[5,10)   0.3179310607 4.498408402 0.342129199 0.032837759 0.0394399848
+[10,15)  0.0755278792 0.412354577 6.602110276 0.440572952 0.0700414646
+[15,20)  0.0572976718 0.080511140 0.558165344 5.414594331 0.3463262272
+[20,25)  0.0765402818 0.102972389 0.166516239 0.503161773 0.8412040183
+[25,30)  0.1034619161 0.130279917 0.126084138 0.150040873 0.2169940136
+[30,35)  0.1162951590 0.173128814 0.165164646 0.114578965 0.0640173828
+[35,40)  0.0988653023 0.175737694 0.199610818 0.140615391 0.0434605441
+[40,45)  0.0726482006 0.147718028 0.187944765 0.166042420 0.0521564679
+[45,50)  0.0540968969 0.124849158 0.160628204 0.157667068 0.0650820375
+[50,55)  0.0390590271 0.101063040 0.130938665 0.118473281 0.0567291283
+[55,60)  0.0231998151 0.063427822 0.086200976 0.069251563 0.0305800143
+[60,65)  0.0099569993 0.026856808 0.037893943 0.029584381 0.0129131164
+[65,70)  0.0031529497 0.008300227 0.011848754 0.009096099 0.0052756383
+[70,75)  0.0009529908 0.002383149 0.003245067 0.002172102 0.0012399827
+[75,Inf) 0.0015920412 0.002589751 0.002491511 0.001053170 0.0003551419
+              [25,30)      [30,35)     [35,40)     [40,45)     [45,50)
+[0,5)    0.0646516722 0.0640423739 0.047315981 0.060371758 0.101896890
+[5,10)   0.0710216181 0.1153472661 0.109600111 0.121213994 0.207901620
+[10,15)  0.0552525717 0.1046319274 0.142556457 0.150273858 0.206484573
+[15,20)  0.0718415846 0.0743912189 0.123642828 0.150202705 0.162172367
+[20,25)  0.1486215645 0.0465312628 0.053981076 0.074231183 0.076299523
+[25,30)  0.2961808482 0.0818562792 0.040460944 0.046800565 0.050215344
+[30,35)  0.1066361894 0.1622009398 0.061649782 0.047742449 0.048127062
+[35,40)  0.0314694997 0.0630760101 0.071094589 0.048578686 0.046367621
+[40,45)  0.0203285215 0.0230012722 0.034078503 0.039934367 0.045420631
+[45,50)  0.0252626911 0.0164908729 0.017485770 0.024043071 0.041321567
+[50,55)  0.0298387752 0.0186131356 0.013190196 0.013794849 0.023680207
+[55,60)  0.0203295413 0.0167506823 0.011430455 0.008564327 0.009996071
+[60,65)  0.0096119492 0.0109345007 0.009726346 0.007078658 0.005452022
+[65,70)  0.0046486152 0.0064222712 0.008317668 0.007534387 0.005131395
+[70,75)  0.0010920323 0.0016911875 0.003033472 0.003759291 0.002741524
+[75,Inf) 0.0002347126 0.0003985183 0.001108305 0.002566262 0.002936996
+             [50,55)      [55,60)      [60,65)      [65,70)      [70,75)
+[0,5)    0.111540917 0.0689229326 0.0303233734 0.0100116875 0.0022718430
+[5,10)   0.268349879 0.1528186883 0.0492270517 0.0168105904 0.0070864370
+[10,15)  0.276743106 0.1719292437 0.0467756630 0.0126054097 0.0071180504
+[15,20)  0.180090388 0.1225171357 0.0344122268 0.0067115699 0.0029223018
+[20,25)  0.066381028 0.0443558711 0.0164280754 0.0039186747 0.0010282893
+[25,30)  0.038707054 0.0239966116 0.0119549148 0.0038528858 0.0006233083
+[30,35)  0.035452559 0.0210155654 0.0131419956 0.0059015177 0.0007926006
+[35,40)  0.032048855 0.0172626997 0.0131270183 0.0098082738 0.0016822804
+[40,45)  0.033636435 0.0153681201 0.0114284413 0.0142364478 0.0043316022
+[45,50)  0.044416123 0.0195019024 0.0104557120 0.0162572310 0.0097638800
+[50,55)  0.051143630 0.0333379479 0.0125009921 0.0140967349 0.0133427018
+[55,60)  0.021116413 0.0402120602 0.0193401479 0.0113680788 0.0096515725
+[60,65)  0.006670482 0.0138593883 0.0248064365 0.0111717648 0.0049073717
+[65,70)  0.003674495 0.0044116127 0.0080533915 0.0094131841 0.0028034789
+[70,75)  0.001519927 0.0011136884 0.0013891506 0.0019236740 0.0016463565
+[75,Inf) 0.001533895 0.0006295928 0.0004720087 0.0005558011 0.0005999646
+             [75,Inf)
+[0,5)    0.0002418317
+[5,10)   0.0017264725
+[10,15)  0.0053662254
+[15,20)  0.0076887406
+[20,25)  0.0064600058
+[25,30)  0.0029941645
+[30,35)  0.0007293494
+[35,40)  0.0001878398
+[40,45)  0.0002459017
+[45,50)  0.0009214829
+[50,55)  0.0029394245
+[55,60)  0.0046223541
+[60,65)  0.0033614790
+[65,70)  0.0014681503
+[70,75)  0.0005724311
+[75,Inf) 0.0004628103
+
+$other
+              [0,5)     [5,10)    [10,15)    [15,20)    [20,25)    [25,30)
+[0,5)    0.81478145 0.45256395 0.10917264 0.07894378 0.12307902 0.16430265
+[5,10)   0.41931103 1.82170694 0.64279606 0.14369974 0.12559994 0.17320691
+[10,15)  0.15456026 0.70094600 2.94289487 0.77429570 0.20212198 0.19275555
+[15,20)  0.14466070 0.20363249 0.97503511 3.28269950 0.79289273 0.29139412
+[20,25)  0.24961582 0.17730485 0.27027619 1.18360196 2.65007558 0.78197436
+[25,30)  0.41873117 0.27419642 0.20502680 0.38098229 1.17396320 1.61008983
+[30,35)  0.46883939 0.40232329 0.24325593 0.24579509 0.46123947 0.85475513
+[35,40)  0.34794320 0.40489139 0.30385643 0.23854219 0.29109001 0.42489448
+[40,45)  0.23220288 0.28696080 0.29001756 0.26229359 0.26163860 0.29686619
+[45,50)  0.19255317 0.19112428 0.21122870 0.24643244 0.27369098 0.28367683
+[50,55)  0.20140850 0.15035891 0.13726777 0.17746039 0.25023977 0.29465932
+[55,60)  0.22462026 0.14589723 0.09918483 0.10855714 0.17585721 0.26386805
+[60,65)  0.21180314 0.14335045 0.08667867 0.06948485 0.09749767 0.17018673
+[65,70)  0.15034532 0.11690769 0.07757210 0.05286184 0.05150181 0.07920448
+[70,75)  0.08370649 0.07438835 0.06007261 0.04410846 0.03429442 0.03781846
+[75,Inf) 0.06042292 0.05775048 0.06074408 0.06618968 0.06050986 0.05455752
+            [30,35)    [35,40)   [40,45)    [45,50)    [50,55)    [55,60)
+[0,5)    0.17472242 0.15872293 0.1144962 0.08582814 0.08322425 0.08246880
+[5,10)   0.20972186 0.22996422 0.1889557 0.12351565 0.09375080 0.09797056
+[10,15)  0.22910965 0.26326858 0.2694367 0.20954175 0.13945239 0.11489136
+[15,20)  0.27860098 0.28845443 0.3099640 0.31712781 0.25531656 0.17729369
+[20,25)  0.44629916 0.39514898 0.3559339 0.40098547 0.44664444 0.35197931
+[25,30)  0.77370274 0.58409393 0.4342284 0.39971265 0.53025088 0.56652203
+[30,35)  0.93591372 0.72538589 0.5327966 0.37570996 0.42985935 0.57362723
+[35,40)  0.58693853 0.66873042 0.5962530 0.40732499 0.34338549 0.43347243
+[40,45)  0.35349900 0.46132728 0.5543347 0.48119970 0.35869798 0.35219448
+[45,50)  0.28377089 0.31481319 0.4103487 0.51782967 0.46612993 0.40021291
+[50,55)  0.28939396 0.25968271 0.2797822 0.40041194 0.53679210 0.53305087
+[55,60)  0.31070509 0.26950049 0.2158998 0.25804370 0.43280103 0.59454555
+[60,65)  0.26311901 0.27953644 0.1977481 0.16614160 0.25470577 0.45295014
+[65,70)  0.14670597 0.21311292 0.1799328 0.12278189 0.13495249 0.23580024
+[70,75)  0.06489085 0.11622944 0.1380154 0.10696603 0.09079191 0.11962904
+[75,Inf) 0.06363760 0.09369326 0.1325008 0.15054708 0.15324037 0.16243975
+            [60,65)    [65,70)    [70,75)   [75,Inf)
+[0,5)    0.06765329 0.05644393 0.06925855 0.07257282
+[5,10)   0.10434401 0.09114718 0.08051756 0.07631303
+[10,15)  0.12640516 0.13213018 0.10524390 0.05971995
+[15,20)  0.15335093 0.16876950 0.15600388 0.05931031
+[20,25)  0.23890845 0.21023350 0.21956983 0.08662189
+[25,30)  0.38792043 0.26404222 0.25797758 0.12422600
+[30,35)  0.49244221 0.31550591 0.26187355 0.13881252
+[35,40)  0.45962454 0.33766026 0.26329742 0.13444629
+[40,45)  0.37395422 0.32047334 0.27502788 0.13890602
+[45,50)  0.36110078 0.30731513 0.28869915 0.16681305
+[50,55)  0.45070226 0.34145651 0.29952552 0.20156110
+[55,60)  0.58763639 0.44385525 0.33430965 0.21850540
+[60,65)  0.58360793 0.54767780 0.39987158 0.20850116
+[65,70)  0.38002664 0.50718751 0.46538519 0.19239406
+[70,75)  0.19124072 0.29183395 0.43765109 0.20005401
+[75,Inf) 0.18816965 0.23910618 0.35112878 0.39091971
+
+$all
+             [0,5)    [5,10)    [10,15)    [15,20)    [20,25)    [25,30)
+[0,5)    2.6194968 1.0893795  0.3233530 0.22896181 0.38379538 0.69194745
+[5,10)   1.1918875 7.0725175  1.4471920 0.37150683 0.34521899 0.55696339
+[10,15)  0.5064876 1.6037301 10.3962076 1.69852692 0.53371388 0.51403721
+[15,20)  0.4320243 0.5146815  1.9974643 9.60582092 1.75597064 0.74091401
+[20,25)  0.6605047 0.4607658  0.6376974 2.20370267 4.78998765 1.79518660
+[25,30)  1.0927157 0.6756063  0.4830084 0.76424247 2.24738399 3.48971751
+[30,35)  1.2512859 1.0560966  0.6392382 0.52842969 0.98722983 1.98484955
+[35,40)  0.8976938 1.1561324  0.9293785 0.59611030 0.66270670 1.06252931
+[40,45)  0.5379418 0.8233874  1.0083140 0.80826333 0.65100606 0.79346840
+[45,50)  0.4072469 0.5140882  0.7388462 0.89384074 0.81523279 0.79994723
+[50,55)  0.4111453 0.3797018  0.4440904 0.63532275 0.85200082 0.89142637
+[55,60)  0.4399385 0.3378610  0.2854941 0.33605136 0.56505215 0.80561779
+[60,65)  0.3819526 0.3077217  0.2105421 0.17915228 0.26995535 0.46227710
+[65,70)  0.2501437 0.2343943  0.1712034 0.11911803 0.13040945 0.19394412
+[70,75)  0.1379713 0.1412109  0.1254746 0.09572899 0.08524679 0.09388003
+[75,Inf) 0.1126203 0.1223715  0.1268703 0.13327569 0.14933130 0.15771897
+           [30,35)   [35,40)   [40,45)   [45,50)   [50,55)   [55,60)   [60,65)
+[0,5)    0.8536773 0.6460735 0.4222595 0.3736569 0.3864045 0.3616037 0.2816777
+[5,10)   0.9224997 1.1071588 0.8365958 0.6321491 0.5939343 0.4811791 0.3869020
+[10,15)  0.7307321 1.1097509 1.2401475 0.9579246 0.7437699 0.5293386 0.3859341
+[15,20)  0.7121243 0.9032815 1.1983916 1.2370304 0.9452866 0.6094109 0.3875233
+[20,25)  1.0446636 1.0029908 1.0881571 1.2650332 1.2473179 0.8796617 0.5139167
+[25,30)  1.8463824 1.3931739 1.2331953 1.2007381 1.3387141 1.2307878 0.7685713
+[30,35)  2.4624541 1.7893233 1.4138314 1.1399886 1.1132949 1.1810805 0.9435108
+[35,40)  1.5207999 1.8856180 1.5737579 1.1584049 0.9329123 0.9049823 0.8501797
+[40,45)  0.9525148 1.2862255 1.6314584 1.3428045 0.9629746 0.7728176 0.6737228
+[45,50)  0.8107096 0.9299928 1.2234180 1.5647073 1.2703053 0.8926446 0.6490256
+[50,55)  0.8014576 0.7786774 0.8634086 1.1366551 1.5441805 1.2319048 0.7992597
+[55,60)  0.8021330 0.6926241 0.6224678 0.6781457 1.0058683 1.4473929 1.0971037
+[60,65)  0.6329088 0.6225748 0.4713188 0.3946175 0.4958286 0.8369486 1.2029913
+[65,70)  0.3207948 0.4505583 0.3923286 0.2680031 0.2484378 0.3654160 0.6254597
+[70,75)  0.1352022 0.2326635 0.2973072 0.2372403 0.1734808 0.1839119 0.2713977
+[75,Inf) 0.1626995 0.2076237 0.3012825 0.3758589 0.3706038 0.3255729 0.3058989
+           [65,70)   [70,75)  [75,Inf)
+[0,5)    0.1931504 0.1723937 0.2070321
+[5,10)   0.2939867 0.2198456 0.2440371
+[10,15)  0.3436658 0.2761259 0.2372748
+[15,20)  0.3387182 0.3181326 0.2328029
+[20,25)  0.3697879 0.3604127 0.2585333
+[25,30)  0.4544454 0.3934787 0.2905082
+[30,35)  0.5732568 0.4131476 0.2888511
+[35,40)  0.6527624 0.4703171 0.2770188
+[40,45)  0.6019504 0.5367344 0.3125663
+[45,50)  0.5298609 0.5336493 0.4071881
+[50,55)  0.5438098 0.4875705 0.4845223
+[55,60)  0.6777572 0.4881291 0.4786380
+[60,65)  0.9006746 0.5689396 0.3963394
+[65,70)  0.9381085 0.7218211 0.3292546
+[70,75)  0.4681275 0.7530014 0.3503535
+[75,Inf) 0.3574148 0.5629846 0.7994623</code></pre>
+</div>
+</div>
+</section>
+<section id="plot-new-contact-matrix" class="slide level2">
+<h2>plot new contact matrix</h2>
+<div class="cell" data-hash="index_cache/revealjs/plot-matrix-fairfield_9a4c57d5217cd158625d3fcd4cfdead2">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">plot_matrix</span>(synthetic_fairfield<span class="sc">$</span>home)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="index_files/figure-revealjs/plot-matrix-fairfield-1.png" width="960" class="r-stretch"><div class="cell" data-hash="index_cache/revealjs/polymod-extrapolate_e919f8ac1fa20cd663da6c02f367ad28">
+
+</div>
+</section>
+<section id="plot-polymod" class="slide level2">
+<h2>plot POLYMOD</h2>
+<div class="cell" data-hash="index_cache/revealjs/plot-matrix-polymod_4912c5d5565f85511319123962066aaa">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">plot_matrix</span>(synthetic_polymod<span class="sc">$</span>home)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<img data-src="index_files/figure-revealjs/plot-matrix-polymod-1.png" width="960" class="r-stretch"></section>
+<section id="challenges-in-design" class="slide level2">
+<h2>Challenges in Design</h2>
+<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-18_035a70a1a29ef1570b4000f8e3edc9ec">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>synthetic_fairfield <span class="ot">&lt;-</span> <span class="fu">extrapolate_polymod</span>(</span>
+<span id="cb11-2"><a href="#cb11-2"></a> <span class="at">population =</span> fairfield</span>
+<span id="cb11-3"><a href="#cb11-3"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li class="fragment">Model fitting is fixed and rigid</li>
+<li class="fragment">Design decision to provide access to fitting the model</li>
+<li class="fragment">Fixed and rigid means you cannot change the</li>
+</ul>
+</section>
+<section id="challenges-in-design-1" class="slide level2">
+<h2>Challenges in Design</h2>
+<ul>
+<li class="fragment"><p>Hard coding variables</p></li>
+<li class="fragment"><p>age and population columns are currently required to be named <code>lower.age.limit</code> and <code>population</code></p></li>
+<li class="fragment"><p>At least 2 potential ways to resolve this</p></li>
+</ul>
+<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-19_b54bac249a2e5f9026d6c565153b0643">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>fairfield</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 18 × 4
+   lga           lower.age.limit  year population
+   &lt;chr&gt;                   &lt;dbl&gt; &lt;dbl&gt;      &lt;dbl&gt;
+ 1 Fairfield (C)               0  2020      12261
+ 2 Fairfield (C)               5  2020      13093
+ 3 Fairfield (C)              10  2020      13602
+ 4 Fairfield (C)              15  2020      14323
+ 5 Fairfield (C)              20  2020      15932
+ 6 Fairfield (C)              25  2020      16190
+ 7 Fairfield (C)              30  2020      14134
+ 8 Fairfield (C)              35  2020      13034
+ 9 Fairfield (C)              40  2020      12217
+10 Fairfield (C)              45  2020      13449
+11 Fairfield (C)              50  2020      13419
+12 Fairfield (C)              55  2020      13652
+13 Fairfield (C)              60  2020      12907
+14 Fairfield (C)              65  2020      10541
+15 Fairfield (C)              70  2020       8227
+16 Fairfield (C)              75  2020       5598
+17 Fairfield (C)              80  2020       4006
+18 Fairfield (C)              85  2020       4240</code></pre>
+</div>
+</div>
+</section>
+<section id="challenges-in-design-2" class="slide level2">
+<h2>Challenges in Design</h2>
+<ol type="1">
+<li class="fragment">Provide arguments for specifying the age and population information (<code>age_col</code> and <code>population_col</code>)</li>
+</ol>
+<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-20_340ebb161b30e6c660003060a50dbbb9">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">extrapolate_polymod</span>(</span>
+<span id="cb14-2"><a href="#cb14-2"></a> <span class="at">population =</span> fairfield,</span>
+<span id="cb14-3"><a href="#cb14-3"></a> <span class="at">age_col =</span> lower.age.limit,</span>
+<span id="cb14-4"><a href="#cb14-4"></a> <span class="at">population_col =</span> population</span>
+<span id="cb14-5"><a href="#cb14-5"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="challenges-in-design-3" class="slide level2">
+<h2>Challenges in Design</h2>
+<ol start="2" type="1">
+<li class="fragment">Some kind of class based approach, where we encode or validate the <code>age</code> and <code>population</code> columns.</li>
+</ol>
+<div class="cell" data-hash="index_cache/revealjs/unnamed-chunk-21_cef1caf68dcc88a38e6ebab87feb2e74">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>fairfield_pop <span class="ot">&lt;-</span> <span class="fu">conmat_population</span>(</span>
+<span id="cb15-2"><a href="#cb15-2"></a>  <span class="at">data =</span> fairfield,</span>
+<span id="cb15-3"><a href="#cb15-3"></a>  <span class="at">age =</span> lower.age.limit,</span>
+<span id="cb15-4"><a href="#cb15-4"></a>  <span class="at">population =</span> population</span>
+<span id="cb15-5"><a href="#cb15-5"></a>)</span>
+<span id="cb15-6"><a href="#cb15-6"></a><span class="fu">extrapolate_polymod</span>(</span>
+<span id="cb15-7"><a href="#cb15-7"></a> <span class="at">population =</span> fairfield_pop</span>
+<span id="cb15-8"><a href="#cb15-8"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="challenges-in-design-4" class="slide level2">
+<h2>Challenges in Design</h2>
+<ul>
+<li class="fragment">Rigid model design means easy to use, at cost of flexibility</li>
+<li class="fragment">Specified variable names is fragile, but saves typing</li>
+<li class="fragment">Extra functions could always be added to be more flexible variants</li>
+</ul>
+</section>
+<section id="future-directions" class="slide level2">
+<h2>Future Directions</h2>
+<div class="fragment fade-up">
+<ul>
+<li class="fragment">Interface to changing GAM model terms or specify model</li>
+<li class="fragment">Better automatic plotting</li>
+<li class="fragment">Validating against Prem and other methods</li>
+<li class="fragment">Allowing more flexible uses of other data sources</li>
+</ul>
+</div>
+</section>
+<section id="thanks" class="title-slide slide level1 center">
+<h1>Thanks</h1>
+<ul>
+<li class="fragment">Nick Golding</li>
+<li class="fragment">Aarathy Babu</li>
+<li class="fragment">Michael Lydeamore</li>
+</ul>
+</section>
+
+<section id="learning-more" class="title-slide slide level1 center">
+<h1>Learning more</h1>
+<p><svg viewbox="0 0 640 512" style="height:1em;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"> <path d="M425.7 256c-16.9 0-32.8-9-41.4-23.4L320 126l-64.2 106.6c-8.7 14.5-24.6 23.5-41.5 23.5-4.5 0-9-.6-13.3-1.9L64 215v178c0 14.7 10 27.5 24.2 31l216.2 54.1c10.2 2.5 20.9 2.5 31 0L551.8 424c14.2-3.6 24.2-16.4 24.2-31V215l-137 39.1c-4.3 1.3-8.8 1.9-13.3 1.9zm212.6-112.2L586.8 41c-3.1-6.2-9.8-9.8-16.7-8.9L320 64l91.7 152.1c3.8 6.3 11.4 9.3 18.5 7.3l197.9-56.5c9.9-2.9 14.7-13.9 10.2-23.1zM53.2 41L1.7 143.8c-4.6 9.2.3 20.2 10.1 23l197.9 56.5c7.1 2 14.7-1 18.5-7.3L320 64 69.8 32.1c-6.9-.8-13.5 2.7-16.6 8.9z"></path> </svg> <a href="https://github.com/njtierney/conmat">conmat package</a></p>
+<p><svg viewbox="0 0 512 512" style="height:1em;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"> <path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"></path> </svg> <a href="">talk link</a></p>
+<p><svg viewbox="0 0 512 512" style="height:1em;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"> <path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path> </svg> nj_tierney</p>
+<p><svg viewbox="0 0 496 512" style="height:1em;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"> <path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path> </svg> njtierney</p>
+<p><svg viewbox="0 0 512 512" style="height:1em;position:relative;display:inline-block;top:.1em;" xmlns="http://www.w3.org/2000/svg"> <path d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z"></path> </svg> nicholas.tierney@gmail.com</p>
+</section>
+
+<section id="end." class="title-slide slide level1 center">
+<h1><strong>End.</strong></h1>
+<div class="footer footer-default">
+
+</div>
+</section>
+    </div>
+  </div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="index_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="index_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="index_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="index_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="index_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="index_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="index_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="index_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'smaller': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: false,
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        function fireSlideChanged(previousSlide, currentSlide) {
+
+          // dispatch for htmlwidgets
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for reveal
+        if (window.Reveal) {
+          window.Reveal.addEventListener("slidechanged", function(event) {
+            fireSlideChanged(event.previousSlide, event.currentSlide);
+          });
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const clipboard = new window.ClipboardJS('.code-copy-button', {
+        target: function(trigger) {
+          return trigger.previousElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        setTimeout(function() {
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      });
+      function tippyHover(el, contentFn) {
+        const config = {
+          allowHTML: true,
+          content: contentFn,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'quarto-reveal',
+          placement: 'bottom-start'
+        };
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          return note.innerHTML;
+        });
+      }
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+        tippyHover(ref, function() {
+          var popup = window.document.createElement('div');
+          cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    });
+    </script>
+    
+
+</body></html>
